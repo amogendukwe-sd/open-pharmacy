@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [master, staging]
+    branches: [main, staging]
   workflow_dispatch:
 
 permissions:
@@ -18,11 +18,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout master
+      - name: Checkout main
         uses: actions/checkout@v4
         with:
-          ref: master
-          path: master
+          ref: main
+          path: main
 
       - name: Checkout staging
         uses: actions/checkout@v4
@@ -33,7 +33,7 @@ jobs:
       - name: Assemble site
         run: |
           mkdir -p _site
-          cp -r master/. _site/
+          cp -r main/. _site/
           rm -rf _site/.git _site/.github
           mkdir -p _site/staging
           cp -r staging/. _site/staging/
