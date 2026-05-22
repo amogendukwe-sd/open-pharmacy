@@ -2377,6 +2377,7 @@
   margin-bottom: var(--spacing-m);
 }
 .bds-banner__body { flex: 1; min-width: 200px; }
+.bds-banner__icon { flex-shrink: 0; color: var(--color-blue-100); }
 
 /* Scroll-to-top FAB -------------------------------------------- */
 #scroll-fab {
